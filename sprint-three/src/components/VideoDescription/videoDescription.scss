@@ -1,6 +1,6 @@
-@import '../../partials/typography';
-@import '../../partials/mixins';
-@import '../../partials/variables';
+@use '../../partials/typography' as *;
+@use '../../partials/mixins' as *;
+@use '../../partials/variables' as *;
 
 .video-description{
     //positioning

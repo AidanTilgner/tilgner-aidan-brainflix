@@ -1,23 +1,14 @@
 import './App.scss';
 import React from 'react';
-import axios from 'axios';
-import Header from './components/PageHeader/PageHeader';
-import VideoPlayer from './components/VideoPlayer/VideoPlayer';
-import Comments from './components/Comments/Comments';
-import RecommendedVideos from './components/RecommendedVideo/RecommendedVideos';
-import VideoDescription from './components/VideoDescription/VideoDescription';
-import Upload from './components/Upload/Upload';
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
   } from 'react-router-dom';
-import VideoDetails from './data/video-details.json';
-import RecommendedVideoDetails from './data/videos.json';
+import Page from './components/Page/Page';
+import Upload from './components/Upload/Upload';
 
 export const API_KEY = '887145e7-6724-4202-8661-ad41a59b3991';
-const VIDEOS_URL = `https://project-2-api.herokuapp.com/videos?api_key=${API_KEY}`
 
 class App extends React.Component {
 
@@ -27,38 +18,15 @@ class App extends React.Component {
                 <Router>
                     <Switch>
                         <Route path="/" exact>
-                            <Header/>
-                            <VideoPlayer/>
-                            <div className="app-ui">
-                                <VideoDescription/>
-                                <Comments/>
-                                <RecommendedVideos/>
-                            </div>
+                            <Page/>
                         </Route>
-                        <Route path="/upload" exact
+                        <Route path="/upload"
                             component={Upload}
                         />
                         <Route 
-                            path="/:id" exact
-                            children={routerProps => (
-                                <div>
-                                    <Header/>
-                                    <VideoPlayer
-                                        {...routerProps}
-                                    />
-                                    <div className="app-ui">
-                                        <VideoDescription 
-                                            {...routerProps}
-                                        />
-                                        <Comments 
-                                            {...routerProps}
-                                        />
-                                        <RecommendedVideos
-                                            {...routerProps}
-                                        />
-                                    </div>
-                                </div>
-                            )}/>
+                            path="/videos/:id"
+                            render={routerProps => <Page {...routerProps}/>}
+                        />
                     </Switch>
                 </Router>
             </div>

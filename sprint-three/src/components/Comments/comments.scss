@@ -1,6 +1,6 @@
-@import '../../partials/variables';
-@import '../../partials/typography';
-@import '../../partials/mixins';
+@use '../../partials/variables' as *;
+@use '../../partials/typography' as *;
+@use '../../partials/mixins' as *;
 
 .comments{
     //fonts

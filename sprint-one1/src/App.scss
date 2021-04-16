@@ -1,0 +1,24 @@
+@import './partials/variables';
+@import './partials/mixins';
+@import './partials/typography';
+
+*{
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+  font-size: 10px;
+}
+
+.app-ui{
+  @include desktop{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 200vh;
+    padding-inline-start: 18rem;
+    padding-inline-end: 18rem;
+  }
+}
+

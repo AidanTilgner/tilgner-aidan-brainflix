@@ -1,0 +1,158 @@
+@import '../../partials/mixins';
+@import '../../partials/variables';
+@import '../../partials/typography';
+
+*{
+    box-sizing: border-box;
+}
+
+.header{
+    //positioning
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-inline-start: 1.6rem;
+    padding-inline-end: 1.6rem;
+    justify-content: center;
+    text-align: center;
+
+    //font stuff
+    font-family: 'Avenir';
+
+    border-bottom: 1px solid $mercury;
+
+    @include tablet{
+        //positioning and shape
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        height: 8rem;
+        align-items: center;
+        padding-inline-start: 2.4rem;
+        padding-inline-end: 2.4rem;
+    }
+
+    @include desktop{
+        //positioning and shaping
+        padding-inline-start: 18rem;
+        padding-inline-end: 18rem;
+    }
+
+    &__logo{
+        //positioning and shaping
+        height: 3.8rem;
+        width: 15rem;
+        margin: 1rem auto;
+
+        @include tablet{
+            //positioning and width
+            margin-right: 16.9rem;
+        }
+
+        @include desktop{
+            //positioning and shaping
+            margin-right: 50.9rem;
+        }
+    }
+
+    &__search{
+        //background
+        background-image: url('../../assets/images/Icon-search.svg');
+        background-repeat: no-repeat;
+        background-size: 2rem;
+        background-position: 5%;
+
+        //positioning and shaping
+        height: 4.85rem;
+        width: 100%;
+        margin-bottom: .8rem;
+        padding-left: 5rem;
+
+        //font stuff
+        font-size: 1.6rem;
+        font-family: 'Avenir';
+
+        //pretty stuff
+        border: 1px solid $mercury;
+        border-radius: 6px;
+
+        @include tablet{
+            //positioning and shape
+            padding-right: auto;
+            padding-left: 6rem;
+            margin-left: auto;
+            margin-right: 2.4rem;
+            margin-bottom: 0;
+        }
+        
+    }
+
+    &__upload-link{
+        text-decoration: none;
+        width: 75%;
+        margin-right: auto;
+    }
+
+    &__upload{
+        //positioning and shaping
+        height: 4.85rem;
+        width: 100%;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1.6rem;
+
+        //font stuff
+        color: white;
+        font-size: 1.6rem;
+
+        //pretty stuff
+        border: none;
+        background-color: $brainflix-blue;
+        border-radius: 6px;
+
+        &>*{
+            margin-right: 1rem;
+        }
+
+        @include tablet{
+            //positioning and shape
+            width: 15rem;
+            padding: 0 5rem;
+            margin-right: 2.4rem;
+            margin-bottom: 0;
+        }
+    }
+
+    &__profile-pic{
+        //background stuff
+        background-image: url('../../assets/images/Mohan-muruge.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        //positioning and shape
+        height: 4.85rem;
+        margin-left: 2.4rem;
+        padding-left: 4.85rem;
+
+        //pretty stuff
+        border-radius: 50%;
+
+        @include tablet{
+            //positioning and shape
+            margin-left: auto;
+        }
+    }
+
+    &__upload-icon{
+        height: 1.6rem;
+    }
+}
+
+::placeholder{
+    color: $black;
+}
+
+input:focus{
+    outline: black;
+}

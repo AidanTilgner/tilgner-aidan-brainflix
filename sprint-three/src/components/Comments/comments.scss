@@ -1,0 +1,231 @@
+@import '../../partials/variables';
+@import '../../partials/typography';
+@import '../../partials/mixins';
+
+.comments{
+    //fonts
+    font-family: 'Avenir';
+
+    //positioning
+    text-align: left;
+    padding-inline-start: 1.6rem;
+    padding-inline-end: 1.6rem;
+
+    @include tablet{
+        padding-inline-start: 2.4rem;
+        padding-inline-end: 2.4rem;
+    }
+
+    @include desktop{
+        padding-inline-start: 0;
+        padding-inline-end: 0;
+        width: 60%;
+        border-right: 2px solid $mercury;
+    }
+
+    &__title{
+        //positioning
+        margin-top: 4rem;
+        margin-bottom: 3.2rem;
+
+        //font stuff
+        font-size: 1.6rem;
+        font-weight: 500;
+
+        @include desktop{
+            margin-top: 0;
+            padding-top: 4rem;
+        }
+    }
+
+    &__form-container{
+        //positioning
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        //pretty stuff
+        border-bottom: 2px solid $mercury;
+
+        @include tablet{
+            justify-content: flex-start;
+            padding-top: 2rem;
+        }
+    }
+
+    &__profile-pic{
+        //background stuff
+        background-image: url('../../assets/images/Mohan-muruge.jpg');
+        background-size: cover;
+
+        //position and shape
+        border-radius: 50%;
+        height: 4.45rem;
+        width: 4.45rem;
+        margin-top: 2rem;
+
+        @include tablet{
+            margin-top: 0;
+            margin-bottom: 2.4rem;
+            margin-right: 1.6rem;
+        }
+    }
+
+    &__form {
+        //positioning
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+
+        @include tablet{
+            flex-direction: row;
+        }
+    }
+
+    &__label{
+        //font stuff
+        font-size: $mobile-label;
+        font-weight: 500;
+        color: $silver;
+
+        @include tablet{
+            position: absolute;
+            top: 0;
+        }
+    }
+
+    &__textarea{
+        //position and shape
+        height: 10rem;
+        padding: 1.5rem;
+        margin: .5rem 0 1.6rem 0;
+
+        //font stuff
+        font-family: 'Avenir';
+        font-size: $mobile-subheader;
+
+        //pretty stuff
+        resize: none;
+        border-radius: 4px;
+        border: 2px solid $mercury;
+
+        &:focus{
+            outline: none; 
+            border-color: $brainflix-blue;
+        }
+
+        @include tablet{
+            height: 5rem;
+            width: 44rem;
+            margin: 0;
+            margin-right: 1.6rem;
+            overflow: hidden;
+        }
+        
+        @include desktop{
+            width: 43.6rem;
+        }
+    }
+
+    &__submit{
+        //positioning and shape
+        height: 4.85rem;
+        margin-bottom: 2.4rem;
+
+        //font stuff
+        color: white;
+        font-weight: 500;
+
+        //pretty stuff
+        border-radius: 5px;
+        border: none;
+        background-color: $brainflix-blue;
+
+        @include tablet{
+            margin: 0;
+            width: 16rem;
+        }
+    }
+
+    &__comment-container{
+        //postioning
+        display: flex;
+        justify-content: space-between;
+
+        //pretty stuff
+        border-bottom: 2px solid $mercury;
+
+        @include tablet{
+            justify-content: flex-start;
+        }
+    }
+
+    &__anon-profile-pic{
+        //positioning and shape
+        width: 4rem;
+        height: 4rem;
+        margin-top: 2rem;
+
+        //pretty stuff
+        background-color: $mercury;
+        border-radius: 50%;
+
+        @include tablet{
+            margin-right: 1.6rem;
+        }
+    }
+
+    &__comment-text{
+        //positioning and shape
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin: 2.4rem 0;
+
+        @include tablet{
+            width: 62.4rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__author{
+        //positioning
+        margin-top: 0;
+        margin-bottom: 1.6rem;
+        
+        //font stuff
+        font-size: $mobile-subheader;
+        font-weight: 500;
+
+        @include tablet{
+            margin-right: 1.6rem;
+        }
+    }
+
+    &__timestamp{
+        //positioning 
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 0;
+
+        //font stuff
+        font-size: $mobile-subheader;
+        color: $silver;
+
+        @include tablet{
+            position: relative;
+            width: 50%;
+        }
+    }
+
+    &__comment{
+        //positioning
+        margin: 0;
+
+        //font stuff
+        font-size: $mobile-subheader;
+    }
+}

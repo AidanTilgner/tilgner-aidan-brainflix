@@ -1,0 +1,39 @@
+@import '../../partials/typography';
+@import '../../partials/mixins';
+@import '../../partials/variables';
+
+.video{
+    //positioning
+    text-align: left;
+    background-color: black;
+
+    @include tablet{
+        display: flex;
+        flex-direction: column;
+        padding-inline-start: 2.4rem;
+        padding-inline-end: 2.4rem;
+    }        
+    @include desktop{
+        //positioning
+        padding-inline-start: 18rem;
+        padding-inline-end: 18rem;
+    }
+
+    &__video{
+        //positioning and shaping
+        width: 100%;
+
+        @include tablet{
+            //positioning and shaping
+            width: 70rem;
+            margin: 0 auto;
+        }
+
+        @include desktop{
+            //positioning and shaping
+            width: 94.4rem;
+        }
+
+
+    }
+}

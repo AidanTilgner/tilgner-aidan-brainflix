@@ -8,8 +8,6 @@ import {
 import Page from './components/Page/Page';
 import Upload from './components/Upload/Upload';
 
-export const API_KEY = '887145e7-6724-4202-8661-ad41a59b3991';
-
 class App extends React.Component {
 
     render(){

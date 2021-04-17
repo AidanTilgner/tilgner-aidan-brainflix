@@ -4,7 +4,11 @@ const app = express();
 const fs = require('fs');
 const bodyParser = require('body-parser')
 const jsonParser = bodyParser.json();
+const cors = require('cors')
 const PORT = 8080;
+
+//enable cors for all
+app.use(cors())
 
 //GET from /videos -> all videos
 app.get('/videos', (req, res) => {
@@ -32,6 +36,9 @@ app.post('/videos', jsonParser, (req, res) => {
     let videos = JSON.parse(fs.readFileSync('./data/videos.json'))
     videos.push(newVideo);
     fs.writeFileSync('./data/videos.json', JSON.stringify(videos), err => console.log(err));
+
+    //post to video details as well 
+
     res.send(videos);
 })
 

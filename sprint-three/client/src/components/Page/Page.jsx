@@ -5,7 +5,11 @@ import VideoPlayer from '../VideoPlayer/VideoPlayer';
 import Comments from '../Comments/Comments';
 import RecommendedVideos from '../RecommendedVideoSection/RecommendedVideos';
 import VideoDescription from '../VideoDescription/VideoDescription';
-import { API_KEY } from '../../App'
+
+//default ?api_key=887145e7-6724-4202-8661-ad41a59b3991
+const API_KEY = '';
+//default https://project-2-api.herokuapp.com
+const API_URL = 'http://localhost:8080';
 
 class Page extends React.Component{
     id = this.props.match ? this.props.match.params.id : '1af0jruup5gu';
@@ -24,7 +28,7 @@ class Page extends React.Component{
 
     componentDidMount = () => {
         //get main video object here
-        axios.get(`https://project-2-api.herokuapp.com/videos/${this.state.id}?api_key=${API_KEY}`)
+        axios.get(`${API_URL}/videos/${this.state.id}${API_KEY}`)
         .then(res => {
             this.setState({
                 selectedVideo: res.data, //get video info here
@@ -35,8 +39,9 @@ class Page extends React.Component{
         })
 
         //get recommended video objects here
-        axios.get(`https://project-2-api.herokuapp.com/videos?api_key=${API_KEY}`)
+        axios.get(`${API_URL}/videos${API_KEY}`)
         .then(res => {
+            console.log(res)
             this.setState({
                 videos: this.filterVideos(this.state.id, res.data), //get recommended video details here
             })
@@ -54,7 +59,7 @@ class Page extends React.Component{
                 id: newID,
             })
             //get main video object here
-            axios.get(`https://project-2-api.herokuapp.com/videos/${newID}?api_key=${API_KEY}`)
+            axios.get(`${API_URL}/videos/${newID}${API_KEY}`)
             .then(res => {
                 this.setState({
                     selectedVideo: res.data,
@@ -65,7 +70,7 @@ class Page extends React.Component{
             })
 
             //get recommended video objects here
-            axios.get(`https://project-2-api.herokuapp.com/videos?api_key=${API_KEY}`)
+            axios.get(`${API_URL}/videos${API_KEY}`)
             .then(res => {
                 this.setState({
                     videos: this.filterVideos(newID, res.data),

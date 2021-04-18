@@ -5,11 +5,10 @@ import VideoPlayer from '../VideoPlayer/VideoPlayer';
 import Comments from '../Comments/Comments';
 import RecommendedVideos from '../RecommendedVideoSection/RecommendedVideos';
 import VideoDescription from '../VideoDescription/VideoDescription';
+import { API_URL } from '../../App'
 
 //default ?api_key=887145e7-6724-4202-8661-ad41a59b3991
 const API_KEY = '';
-//default https://project-2-api.herokuapp.com
-const API_URL = 'http://localhost:8080';
 
 class Page extends React.Component{
     id = this.props.match ? this.props.match.params.id : '1af0jruup5gu';

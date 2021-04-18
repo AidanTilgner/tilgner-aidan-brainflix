@@ -2,18 +2,36 @@ import React from 'react';
 import PageHeader from '../PageHeader/PageHeader';
 import Thumbnail from '../../assets/images/Upload-video-preview.jpg';
 import { Link } from 'react-router-dom';
-import './upload.scss'
+import axios from 'axios';
+import './upload.scss';
+import { API_URL } from '../../App';
 
 class Upload extends React.Component {
     state = {
         email: ''
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+        let title = document.getElementById('title').value;
+        let description = document.getElementById('description').value;
+
+        axios.post(`${API_URL}/videos`, {
+            "title": title,
+            "description": description
+        })
+        .then(res => {
+            alert('Video Published');
+        })
+
+        this.props.history.push('/');
+    }
+
     render(){
         return (
             <div>
                 <PageHeader />
-                <div className="upload">
+                <form className="upload" onSubmit={(e) => this.handleSubmit(e)}>
                     <h1 className="upload__title">Upload Video</h1>
                     <div className="upload__video-info">
                         <h4 className="upload__thumbnail-label">VIDEO THUMBNAIL</h4>
@@ -26,14 +44,10 @@ class Upload extends React.Component {
                         </div>
                     </div>
                     <div className="upload__form-buttons">
-                        <button className="upload__submit" onClick={ (e) => {
-                            e.preventDefault();
-                            alert('Video Published');
-                            this.props.history.push('/');
-                        }}>PUBLISH</button>
+                        <input type="submit" value="PUBLISH" className="upload__submit"/>
                         <Link to="/" className="upload__cancel">CANCEL</Link>
                     </div>
-                </div>
+                </form>
             </div>
         )
     }

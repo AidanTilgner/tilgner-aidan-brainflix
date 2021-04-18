@@ -8,6 +8,8 @@ import {
 import Page from './components/Page/Page';
 import Upload from './components/Upload/Upload';
 
+export const API_URL = 'http://localhost:8080';
+
 class App extends React.Component {
 
     render(){

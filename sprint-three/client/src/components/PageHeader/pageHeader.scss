@@ -15,6 +15,7 @@
     padding-inline-end: 1.6rem;
     justify-content: center;
     text-align: center;
+    position: relative;
 
     //font stuff
     font-family: 'Avenir';
@@ -134,12 +135,18 @@
         height: 4.85rem;
         margin-left: 2.4rem;
         padding-left: 4.85rem;
+        position: absolute;
+        bottom: 1.6rem;
+        right: 1.6rem;
 
         //pretty stuff
         border-radius: 50%;
 
         @include tablet{
             //positioning and shape
+            position: relative;
+            bottom: 0;
+            right: 0;
             margin-left: auto;
         }
     }

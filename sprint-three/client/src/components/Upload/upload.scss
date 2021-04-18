@@ -36,6 +36,9 @@
     }
 
     &__video-info{
+        width: 100%;
+        text-align: left;
+
         @include desktop{
             display: flex;
             flex-direction: row;
@@ -134,10 +137,14 @@
     &__form-buttons{
         width: 100%;
         display: flex;
-        flex-direction: row-reverse;
-        justify-content: flex-start;
-        padding-top: 4rem;
-        border-top: 1px solid $mercury;
+        flex-direction: column;
+
+        @include tablet{
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+            padding-top: 4rem;
+            border-top: 1px solid $mercury;
+        }
     }
 
     &__submit{

@@ -48,7 +48,6 @@
         border-bottom: 2px solid $mercury;
 
         @include tablet{
-            justify-content: flex-start;
             padding-top: 2rem;
         }
     }
@@ -79,6 +78,7 @@
 
         @include tablet{
             flex-direction: row;
+            margin-left: auto;
         }
     }
 
@@ -124,6 +124,7 @@
         
         @include desktop{
             width: 43.6rem;
+            margin-right: 4rem;
         }
     }
 

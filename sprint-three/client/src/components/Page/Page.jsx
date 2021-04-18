@@ -40,7 +40,6 @@ class Page extends React.Component{
         //get recommended video objects here
         axios.get(`${API_URL}/videos${API_KEY}`)
         .then(res => {
-            console.log(res)
             this.setState({
                 videos: this.filterVideos(this.state.id, res.data), //get recommended video details here
             })
@@ -93,6 +92,7 @@ class Page extends React.Component{
                         timestamp={this.state.selectedVideo.timestamp}
                         views={this.state.selectedVideo.views}
                         likes={this.state.selectedVideo.likes}
+                        description={this.state.selectedVideo.description}
                     />
                     <Comments comments={this.state.selectedVideo.comments}/>
                     <RecommendedVideos videos={this.state.videos}/>
